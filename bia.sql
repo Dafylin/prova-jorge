@@ -56,7 +56,7 @@ alter table pacote add foreign key (cod_viagem) references
 viagem (id_viagem);
 
 insert into passageiro (nome, idade, sexo, rg) values
-('Gael Lima','20','M','1.234.567.8-9');
+('Gael Lima','20','M','1.234.567.8-7');
 
 insert into passageiro (nome, idade, sexo, rg) values
 ('Maria Eduarda','20','F','1.234.567.8-9');
@@ -92,5 +92,6 @@ select viagem.id_viagem, passageiro.nome, viagem.data_viagem
 from viagem
 inner join passageiro on viagem.cod_passageiro=passageiro.id_passageiro;
 
-
-
+select passageiro.sexo, passageiro.nome, destino.cidade
+from destino
+inner join passageiro on destino.cod_passageiro=passageiro.id_passageiro;
